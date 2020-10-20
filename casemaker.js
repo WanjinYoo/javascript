@@ -1,10 +1,70 @@
 
 
 const makeCase = function(input, case1) {
-  // Put your solution here
- if(case1 === "camel"){
- 	return camel(input);
- }
+	// Put your solution here
+ let result = [];
+if(typeof case1 === "string"){
+	result.push(case1);
+}
+else if(typeof case1 ==="object"){
+
+
+	for(let i = 0; i < case1.length;i++){
+		if(case1[i] === "camel" || case1[i] === "pascal" || case1[i] === "snake" || case1[i] === "kebab" || case1[i] === "title"){
+			result.push(case1[i]);
+		}
+	}
+	for(let i = 0; i < case1.length;i++){
+		if(case1[i] === "vowel" || case1[i] === "consonant"){
+			result.push(case1[i]);
+		}
+	}
+
+	for(let i = 0; i < case1.length;i++){
+			if(case1[i] ==="upper" || case1[i] === "lower"){
+			result.push(case1[i]);
+		}
+	
+	
+	
+	}
+
+}
+
+
+
+for(let i =0; i < result.length; i++){
+	if(result[i] === "camel"){
+		input = camel(input);
+	}
+	if(result[i] === "pascal"){
+		input = pascal(input);
+	}
+	if(result[i] === "snake"){
+		input = snake(input);
+	}
+	if(result[i] === "kebab"){
+		input = kebab(input);
+	}
+	if(result[i] === "title"){
+		input = title(input);
+	}
+	if(result[i] === "vowel"){
+		input = vowel(input);
+	}
+	if(result[i] === "consonant"){
+		input = consonant(input);
+	}
+	if(result[i] === "upper"){
+		input = upper(input);
+	}
+	if(result[i] === "lower"){
+		input = lower(input);
+	}
+}
+return input;
+
+ 
 }
 
 const camel = function(input){
